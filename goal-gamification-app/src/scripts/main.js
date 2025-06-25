@@ -51,7 +51,13 @@ document.addEventListener('DOMContentLoaded', function() {
         let studyRecords = JSON.parse(localStorage.getItem('studyRecords')) || [];
         studyRecords.push(record);
         localStorage.setItem('studyRecords', JSON.stringify(studyRecords));
-        window.location.href = 'history.html';
+        // 合計勉強時間を計算
+        const total = studyRecords.reduce((sum, r) => sum + Number(r.time), 0);
+        if (total >= 600) {
+            window.location.href = 'congrats.html';
+        } else {
+            window.location.href = 'history.html';
+        }
     });
 
     document.getElementById('training-form').addEventListener('submit', function(e) {
