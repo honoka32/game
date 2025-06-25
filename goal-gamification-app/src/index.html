@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="styles/style.css">
 </head>
 <body>
-    <div class="container">
+    <div class="container" id="goal-setting-container">
         <h1>目標設定</h1>
         <form id="goal-form">
             <label for="goal-title">目標タイトル:</label>
@@ -21,6 +21,32 @@
 
             <button type="submit">目標を設定する</button>
         </form>
+    </div>
+
+    <div class="container" id="record-container" style="display:none;">
+        <h1>記録画面</h1>
+        <div>
+            <h2>勉強時間の記録</h2>
+            <form id="study-form">
+                <label for="study-date">日付:</label>
+                <input type="date" id="study-date" required>
+                <label for="study-time">勉強時間（分）:</label>
+                <input type="number" id="study-time" min="1" required>
+                <button type="submit">記録する</button>
+            </form>
+            <ul id="study-history"></ul>
+        </div>
+        <div>
+            <h2>トレーニング履歴の記録</h2>
+            <form id="training-form">
+                <label for="training-date">日付:</label>
+                <input type="date" id="training-date" required>
+                <label for="training-detail">内容:</label>
+                <input type="text" id="training-detail" required>
+                <button type="submit">記録する</button>
+            </form>
+            <ul id="training-history"></ul>
+        </div>
     </div>
     <script src="scripts/main.js"></script>
 </body>
