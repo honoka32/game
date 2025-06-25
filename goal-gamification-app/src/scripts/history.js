@@ -42,4 +42,9 @@ document.addEventListener('DOMContentLoaded', function() {
             location.reload();
         }
     });
+
+    // 達成したボタン
+    document.getElementById('achieve-goal').addEventListener('click', function() {
+        window.location.href = 'congrats.html';
+    });
 });
